@@ -23,6 +23,7 @@ class Property(models.Model):
 	price = models.IntegerField(default=0)
 	date = models.DateTimeField('date published')
 	available = models.IntegerField(default=1)
+	#images = models.CharField(max_length=200)
 
 	def __str__(self):
 		return self.name
@@ -33,4 +34,6 @@ class Property(models.Model):
 		else:
 			return False
 
+class general_options(models.Model):
+	front_title = models.CharField(max_length=15)
 

@@ -8,8 +8,8 @@ def index(request):
 	return render(request, 'propapp/index.html', context)
 
 
-def show_property(request,property_id,name,date,price,city,state,address):
-	
-	context = {'id': propertys_id, 'name': name, 'address': address, 'city': city, 'state': state, 'price': price}
+def show_property(request,property_id):
+	propertys_list = Property.objects.get(property_id = property_id)
+	context = {"propertys_list": propertys_list}
 
-	return render(request, 'propapp/show.html', context)
+	return render(request, 'propapp/show_property.html', context)

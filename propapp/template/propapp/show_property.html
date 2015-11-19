@@ -1,13 +1,15 @@
-<<html>
+<html>
 <head>
 	<title>Inmobiliaria</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 </head>
 <body>
-<h1>{{name}}</h1>
-<h3>{{price}}</h3>
-<p>Esta es una propiedad ubicada en {{address}}, ciudad de {{city}},{{state}}.</p>
+<h1>{{propertys_list.name}}</h1>
+<h3>{{propertys_list.price}}</h3>
+<p>Esta es una propiedad ubicada en {{propertys_list.address}}, ciudad de {{propertys_list.city}},{{propertys_list.state}}.</p>
 
-{%!if is_available %}
+{%if propertys_list.is_available != True%}
 
 	<h5>No esta disponible</h5>
 
@@ -16,5 +18,7 @@
 	<h5>Actualmente se encuentra disponible</h5>
 
 {%endif%}
+
+<a href="/">Inicio</a>
 </body>
 </html>
