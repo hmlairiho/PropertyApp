@@ -8,7 +8,7 @@ class CityAdmin(admin.ModelAdmin):
 
 
 class PropertyAdmin(admin.ModelAdmin):
-	list_display = ('name', 'city', 'state', 'date', 'available')
+	list_display = ('name', 'city', 'state', 'price', 'date', 'is_available')
 
 class CityAdmin(admin.ModelAdmin):
 	list_display = ('name', 'state')

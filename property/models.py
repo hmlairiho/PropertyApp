@@ -19,9 +19,19 @@ class Property(models.Model):
 	address = models.CharField(max_length=15)
 	city = models.ForeignKey(City)
 	state = models.ForeignKey(State)
+	price = models.IntegerField(default=0)
 	code = models.CharField(max_length=50)
 	date = models.DateTimeField('date published')
 	available = models.IntegerField(default=1)
 
 	def __str__(self):
 		return self.name
+
+	def is_available (self):
+		if self.available == 1 :
+			return True
+		else:
+			return False
+
+
+
