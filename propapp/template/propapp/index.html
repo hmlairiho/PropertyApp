@@ -1,0 +1,41 @@
+<html>
+<head>
+	<title>Inmobiliaria propertys_list</title>
+</head>
+<body>
+	<div class="header">
+		<ul class="navbar">
+			<li>
+				<a href="propertys/index">Inicio</a>
+			</li>
+			<li>
+				<a href="propertys/about">Nosotros</a>
+			</li>
+			<li>
+				<a href="propertys/property">Propiedades</a>
+			</li>
+			<li>
+				<a href="propertys/contact">Contactenos</a>
+			</li>
+		</ul>
+	</div>
+
+	<h1>Inmobiliaria {{propertys_list}}</h1>
+
+	<script type="text/javascript">Slider</script>
+
+	<ul>	
+		{% for p in propertys %}
+		<li><a href="show/{{p.property_id}}/">{{p}}</a></li>
+		{%endfor%}
+	</ul>
+
+	<div class="footer">
+
+		<p>Copyright 2015 - Dolcapps </p>
+
+	</div>	
+
+
+</body>
+</html>

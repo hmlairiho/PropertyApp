@@ -1,0 +1,20 @@
+<<html>
+<head>
+	<title>Inmobiliaria</title>
+</head>
+<body>
+<h1>{{name}}</h1>
+<h3>{{price}}</h3>
+<p>Esta es una propiedad ubicada en {{address}}, ciudad de {{city}},{{state}}.</p>
+
+{%!if is_available %}
+
+	<h5>No esta disponible</h5>
+
+{%else%}
+
+	<h5>Actualmente se encuentra disponible</h5>
+
+{%endif%}
+</body>
+</html>
