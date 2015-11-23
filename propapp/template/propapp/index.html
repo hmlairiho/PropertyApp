@@ -24,13 +24,24 @@
 		</ul>
 	</div>
 
-	<h1>Inmobiliaria {{propertys_list}}</h1>
+	<h1></h1>
 
 	<script type="text/javascript">Slider</script>
 
 	<ul>	
 		{% for p in propertys %}
 		<li><a href="show/{{p.property_id}}/">{{p}}</a></li>
+		{%endfor%}
+	</ul>
+
+	<ul>
+		{% for i in news %}
+		<div class="news-tag">
+			<li>
+				<img src="{{i.image_link}}">
+				<a href="{{i.referer_link}}">{{i.title}}</a>
+			</li>
+		</div>
 		{%endfor%}
 	</ul>
 

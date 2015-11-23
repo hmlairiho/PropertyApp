@@ -1,7 +1,5 @@
 from django.contrib import admin
-from .models import Property
-from .models import City
-from .models import State
+from .models import Property,City,State,Prop_Images,News,General_Options 
 
 class CityAdmin(admin.ModelAdmin):
 	fieldset = [('City',{'field':['name']}),('Zipcode',{'field':['zipcode']}),('State',{'field':['state.name']})]
@@ -14,7 +12,14 @@ class PropertyAdmin(admin.ModelAdmin):
 class CityAdmin(admin.ModelAdmin):
 	list_display = ('name', 'state')
 
-admin.site.register(Property)
+class NewsAdmin(admin.ModelAdmin):
+	list_display = ('title', 'referer_link', 'date')
+
+admin.site.register(Property,PropertyAdmin)
+admin.site.register(Prop_Images)
 admin.site.register(City, CityAdmin)
 admin.site.register(State)
+admin.site.register(News, NewsAdmin)
+admin.site.register(General_Options)
+
 

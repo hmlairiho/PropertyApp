@@ -1,9 +1,11 @@
 from django.shortcuts import render
-from .models import Property
+from .models import Property,News,General_Options
 
 def index(request):
 	propertys_list = Property.objects.order_by('-date')[:5]
-	context = {'propertys': propertys_list}
+	news_list = News.objects.all()[:5]
+	options = General_Options.objects.all()
+	context = {'propertys': propertys_list,'news': news_list,'options': options}
 
 	return render(request, 'propapp/index.html', context)
 
